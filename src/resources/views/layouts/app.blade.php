@@ -23,34 +23,37 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand navbar-light bg-white">
-            <ul class="navbar-nav col-12 center-block">
-                <li class="nav-item col-4 text-center">
-                    <a class="nav-link" href="#">ホーム</a>
-                </li>
-                @guest
-                <li class="nav-item col-4 text-center">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                <li class="nav-item col-4 text-center">
-                    <a class="nav-link" href="{{ route('login') }}">投稿</a>
-                </li>
-                @else
-                <li class="nav-item col-4 text-center">
-                    <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                </li>
-                <li class="nav-item col-4 text-center">
-                    <a class="nav-link" href="{{ route('login') }}">投稿</a>
-                </li>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-                @endguest
-            </ul>
-        </nav>
+        <div class='fixed-top'>
+            <nav class="navbar navbar-expand navbar-light bg-white">
+                <ul class="navbar-nav col-12 center-block">
+                    <li class="nav-item col-4 text-center">
+                        <a class="nav-link" href="/">ホーム</a>
+                    </li>
+                    @guest
+                    <li class="nav-item col-4 text-center">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    <li class="nav-item col-4 text-center">
+                        <a class="nav-link" href="/">投稿</a>
+                    </li>
+                    @else
+                    <li class="nav-item col-4 text-center">
+                        <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                    </li>
+                    <li class="nav-item col-4 text-center">
+                        <a class="nav-link" href="/upload">投稿</a>
+                    </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    @endguest
+                </ul>
+            </nav>
+        </div>
+        <br><br>
 
         <main class="py-4">
             @yield('content')
