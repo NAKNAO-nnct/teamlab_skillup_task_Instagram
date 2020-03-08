@@ -13,6 +13,11 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),         // 追加！
+        'client_secret' => env('GITHUB_CLIENT_SECRET'), // 追加！
+        'redirect' => '/login/github/callback',
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
