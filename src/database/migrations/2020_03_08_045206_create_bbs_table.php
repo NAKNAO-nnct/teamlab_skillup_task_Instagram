@@ -20,8 +20,10 @@ class CreateBbsTable extends Migration
             $table->string('github_id');
             // いいねしたID
             $table->string('favorite_github_id')->nullable();
-            // 投稿内容
-            $table->json('contents');
+            // 投稿画像
+            $table->text('image');
+            // キャプション
+            $table->string('caption')->nullable();
             $table->timestamps();
         });
     }
