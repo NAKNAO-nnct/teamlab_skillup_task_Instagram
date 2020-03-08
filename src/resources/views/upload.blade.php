@@ -19,7 +19,7 @@
             </div>
         </div>
     </div> -->
-    
+
             <!-- エラーメッセージ。なければ表示しない -->
             @if ($errors->any())
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -36,18 +36,15 @@
 
     <!-- フォーム -->
     <form action="{{ url('upload') }}" method="POST" enctype="multipart/form-data">
-
-        <!-- アップロードした画像。なければ表示しない -->
-        @isset ($filename)
-        <div>
-            <img src="{{ asset('storage/' . $filename) }}">
+        <div class="form-group">
+            <label for="file">画像ファイル</label>
+            <input type="file" class="form-control-file" name="file">
         </div>
-        @endisset
-
-        <label for="photo">画像ファイル:</label>
-        <input type="file" class="form-control" name="file">
-        <br>
-        キャプション<input type="text" name="caption" id="caption">
+        
+        <div class="form-group">
+            <label for="caption">キャプション</label>
+            <textarea class="form-control" id="caption" name="caption" rows="3"></textarea>
+        </div>
         
         <hr>
         {{ csrf_field() }}

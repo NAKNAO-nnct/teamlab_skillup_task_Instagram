@@ -22,7 +22,7 @@
             @foreach ($bbs as $d)
                 
                 <div class="card">
-                    <div class="card-header row col-12">
+                    <div class="card-header row ">
                         <div class="col-9">
                             <a href="/user/{{ $d->github_id }}">{{ $d->user_name }}</a>
                         </div>
