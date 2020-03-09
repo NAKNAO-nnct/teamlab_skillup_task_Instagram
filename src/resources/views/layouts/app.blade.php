@@ -31,14 +31,14 @@
                     </li>
                     @guest
                     <li class="nav-item col-4 text-center">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ /login }}">{{ __('Login') }}</a>
                     </li>
                     <li class="nav-item col-4 text-center">
                         <a class="nav-link" href="/">投稿</a>
                     </li>
                     @else
                     <li class="nav-item col-4 text-center">
-                        <a class="nav-link" href="{{ route('logout') }}"
+                        <a class="nav-link" href="{{ /logout }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
@@ -46,7 +46,7 @@
                     <li class="nav-item col-4 text-center">
                         <a class="nav-link" href="/upload">投稿</a>
                     </li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ /logout }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                     @endguest
