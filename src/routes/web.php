@@ -13,26 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Auth::routes();
-
 Route::get('/user', 'UserController@index');
 Route::get('github', 'Github\GithubController@top');
 
 // login
-// Route::post('/login', function(){});
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
 
 
-
 Route::get('/', 'BbsController@index');
-
-
-
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/upload', function(){
